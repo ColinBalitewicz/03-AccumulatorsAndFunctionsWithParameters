@@ -195,6 +195,8 @@ def run_test_digits_in_power():
 
 
 def digits_in_power(n, k):
+    x=n**k
+    return sum_of_digits(x)
     """
     What comes in:  Two positive integers, n and k.
     What goes out:
