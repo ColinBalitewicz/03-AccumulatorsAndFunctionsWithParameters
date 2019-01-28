@@ -32,7 +32,7 @@ def main():
     #       ** Ask a TA or your professor for help in that case. **
     # -------------------------------------------------------------------------
 
-    # m4t_tester.main()
+    m4t_tester.main()
 
 
 def run_test_sum_of_digits():
@@ -182,20 +182,30 @@ def digits_in_cube(n):
 def run_test_digits_in_power():
     """ Tests the   digits_in_power   function. """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement this function.
+    # DONE: 5. Implement this function.
     #   It TESTS the  digits_in_power  function defined below.
     #   Include at least **   3   ** tests.
     #
     # Use the same 4-step process as in implementing previous TEST functions.
     # -------------------------------------------------------------------------
-    print()
-    print('--------------------------------------------------')
-    print('Testing the   digits_in_power   function:')
-    print('--------------------------------------------------')
+    expected_1=1
+    expected_2=10
+    expected_3=9
+    answer_1=digits_in_power(1,1)
+    answer_2=digits_in_power(2,6)
+    answer_3=digits_in_power(3,4)
+    print('Test 1 answer expected',expected_1)
+    print('Test 1 actual answer',answer_1)
+    print('Test 2 expected answer',expected_2)
+    print('Test 2 actual answer',answer_2)
+    print('Test 3 expected answer',expected_3)
+    print('Test 3 actual answer',answer_3)
+
 
 
 def digits_in_power(n, k):
     x=n**k
+    sum_of_digits(x)
     return sum_of_digits(x)
     """
     What comes in:  Two positive integers, n and k.
@@ -208,7 +218,7 @@ def digits_in_power(n, k):
       since 12 to the 3rd power is 1728 (whose digits sum to 18).
     """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #
     ###########################################################################
     # IMPORTANT: CALL, as many times as needed,
@@ -220,17 +230,25 @@ def digits_in_power(n, k):
 def run_test_fancy_sums_of_digits():
     """ Tests the   fancy_sums_of_digits   function. """
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement this function.
+    # DONE: 7. Implement this function.
     #   It TESTS the  fancy_sums_of_digits  function defined below.
     #   Include at least **   3   ** tests.
     #
     # Use the same 4-step process as in implementing the previous
     # TEST functions.
     # -------------------------------------------------------------------------
-    print()
-    print('--------------------------------------------------')
-    print('Testing the   fancy_sums_of_digits   function:')
-    print('--------------------------------------------------')
+    expected_1=1
+    expected_2=1
+    expected_3=1
+    answer_1=fancy_sums_of_digits(1)
+    answer_2=fancy_sums_of_digits(10)
+    answer_3=fancy_sums_of_digits(100)
+    print('Test 1 expected',expected_1)
+    print('Test 1 actual',answer_1)
+    print('Test 2 expected',expected_2)
+    print('Test 2 actual',answer_2)
+    print('Test 3 expected',expected_3)
+    print('Test 3 actual',answer_3)
 
     # -------------------------------------------------------------------------
     # HINT:  For your 1st test, consider  n=10.  Figure out BY HAND
@@ -242,6 +260,10 @@ def run_test_fancy_sums_of_digits():
 
 
 def fancy_sums_of_digits(n):
+    x=sum_of_digits(n**1000)
+    y=sum_of_digits(n**999)
+    return sum_of_digits(x**y)
+
     """
     What comes in:  A positive integer n.
     What goes out:
@@ -266,7 +288,7 @@ def fancy_sums_of_digits(n):
             -- so this function returns 124309.
     """
     # -------------------------------------------------------------------------
-    # TODO: 8. Implement and test this function.
+    # DONE: 8. Implement and test this function.
     #
     ###########################################################################
     # IMPORTANT: CALL, as many times as needed,
