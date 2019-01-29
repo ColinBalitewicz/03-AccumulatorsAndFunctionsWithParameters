@@ -14,6 +14,7 @@ import rosegraphics as rg
 def main():
     two_circles()
     circle_and_rectangle(120,120,140,50,170,90)
+    lines()
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
 
@@ -103,7 +104,7 @@ def circle_and_rectangle(x,y,t,l,b,r):
            150.0
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this function, per its green doc-string above.
+    # DONE: 3. Implement this function, per its green doc-string above.
     #   -- ANY objects that meet the criteria are fine.
     # Put a statement in   main   to test this function
     #    (by calling this function).
@@ -114,6 +115,18 @@ def circle_and_rectangle(x,y,t,l,b,r):
 
 
 def lines():
+    window=rg.RoseWindow()
+    line_1=rg.Line(rg.Point(0,0),rg.Point(400,400))
+    line_2=rg.Line(rg.Point(0,200),rg.Point(200,200))
+    line_1.attach_to(window)
+    line_2.attach_to(window)
+    line_1.thickness=10
+    mid=line_1.get_midpoint()
+    print(mid)
+    print(mid.x)
+    print(mid.y)
+    window.render()
+    window.close_on_mouse_click()
     """
     -- Constructs a rg.RoseWindow.
     -- Constructs and draws on the window two rg.Lines such that:
@@ -135,7 +148,7 @@ def lines():
 
     -- Waits for the user to press the mouse, then closes the window.
     """
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
 
 
 # -----------------------------------------------------------------------------
