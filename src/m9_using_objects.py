@@ -13,7 +13,7 @@ import rosegraphics as rg
 
 def main():
     two_circles()
-    circle_and_rectangle(120,120,140,50,170,90)
+    circle_and_rectangle(120,120)
     lines()
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
@@ -48,7 +48,7 @@ def two_circles():
     # -------------------------------------------------------------------------
 
 
-def circle_and_rectangle(x,y,t,l,b,r):
+def circle_and_rectangle(x,y):
     window=rg.RoseWindow()
     circle=rg.Circle(rg.Point(x,y),20)
     circle.attach_to(window)
@@ -59,16 +59,14 @@ def circle_and_rectangle(x,y,t,l,b,r):
     print(x,y)
     print(x)
     print(y)
-    rectangle=rg.Rectangle(rg.Point(t,l),rg.Point(b,r))
+    rectangle=rg.Rectangle(rg.Point(120,70),rg.Point(150,90))
     rectangle.attach_to(window)
     rectangle.outline_thickness=2
-    print(t,l)
-    print(b,r)
     print(rectangle.outline_thickness)
-    print(b)
-    print(r)
-    print(t)
-    print(l)
+    mid_rect=rectangle.get_center()
+    print(mid_rect)
+    print(mid_rect.x)
+    print(mid_rect.y)
     print(rectangle.fill_color)
     window.render()
     window.close_on_mouse_click()
