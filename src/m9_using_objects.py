@@ -5,18 +5,30 @@ This module lets you practice  ** using objects **, including:
   -- accessing their DATA via INSTANCE VARIABLES
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Aaron Wilkin, their colleagues, and Colin Balitewicz.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
 
 def main():
+    two_circles()
+    circle_and_rectangle(120,120,140,50,170,90)
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
 
 
 def two_circles():
+    window=rg.RoseWindow()
+    window.render()
+    circle=rg.Circle(rg.Point(50,20),10)
+    circle_2=rg.Circle(rg.Point(60,100),40)
+    circle_2.fill_color='purple'
+    circle.attach_to(window)
+    circle_2.attach_to(window)
+    window.render()
+    window.close_on_mouse_click()
+
     """
     -- Constructs an rg.RoseWindow.
     -- Constructs and draws two rg.Circle objects on the window
@@ -27,7 +39,7 @@ def two_circles():
     -- Waits for the user to press the mouse, then closes the window.
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this function, per its green doc-string above.
+    # DONE: 2. Implement this function, per its green doc-string above.
     #    -- ANY two rg.Circle objects that meet the criteria are fine.
     #    -- File  COLORS.pdf  lists all legal color-names.
     # Put a statement in   main   to test this function
@@ -35,7 +47,31 @@ def two_circles():
     # -------------------------------------------------------------------------
 
 
-def circle_and_rectangle():
+def circle_and_rectangle(x,y,t,l,b,r):
+    window=rg.RoseWindow()
+    circle=rg.Circle(rg.Point(x,y),20)
+    circle.attach_to(window)
+    circle.fill_color='blue'
+    print(circle.fill_color)
+    circle.outline_thickness=2
+    print(circle.outline_thickness)
+    print(x,y)
+    print(x)
+    print(y)
+    rectangle=rg.Rectangle(rg.Point(t,l),rg.Point(b,r))
+    rectangle.attach_to(window)
+    rectangle.outline_thickness=2
+    print(t,l)
+    print(b,r)
+    print(rectangle.outline_thickness)
+    print(b)
+    print(r)
+    print(t)
+    print(l)
+    print(rectangle.fill_color)
+    window.render()
+    window.close_on_mouse_click()
+
     """
     -- Constructs an rg.RoseWindow.
     -- Constructs and draws a rg.Circle and rg.Rectangle
